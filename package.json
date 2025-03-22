@@ -2,19 +2,24 @@
   "name": "webbrowser-mcp",
   "version": "1.0.0",
   "description": "",
-  "type":"module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', 0o755)\"",
+    "inspector": "mcp-inspector dist/index.js"
   },
   "keywords": [],
   "author": "yaxingson <3228891558@qq.com>",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
+    "cheerio": "^1.0.0",
+    "koa": "^2.16.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/node": "^22.13.11",
     "typescript": "^5.8.2"
   }
 }
